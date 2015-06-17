@@ -1,0 +1,52 @@
+//
+//  main.cpp
+//
+//  Created by M.T on 2013/09/21.
+//  Copyright (c) 2013年 M.T All rights reserved.
+//
+
+#include <conio.h>
+#include <iostream>
+#include <stdafx.h>
+#include <stdio.h>
+#define Size 3
+
+
+int main(int argc, const char * argv[])
+{
+
+    int i,j,number[Size],minimum,tem;
+    
+    printf("Input :");
+    for(i=0;i<Size;i++){ // input 3 numbers
+        scanf("%d",&number[i]);
+    }
+    printf("\nHow many times the numbers need to switch in order to sort?");
+    
+    if((number[0]<number[1])&&(number[1]<number[2])&&(number[0]<number[2]))
+        printf("\n0 time");
+    else if(((number[0]>number[1])||(number[0]>number[2]))&&((number[0]>number[1])||(number[1]>number[2]))
+         &&((number[0]>number[2])||(number[1]>number[2])))
+        printf("\n2 times");
+    else printf("\n1 time");
+   
+    // find "i" and sort minimum number
+    for(i=0;i<Size;i++)
+    {
+        minimum=i; //Set "i "as the most minimum number
+        for(j=i+1;j<Size;j++)
+            {
+                if(number[minimum]>number[j])
+                    minimum=j;
+            }
+        tem=number[minimum];
+        number[minimum]=number[i];
+        number[i]=tem;
+    }
+    
+    //This is result
+    printf("\nOutput:");
+    for(j=0;j<Size;j++){
+        printf("%d ",number[j]);
+    }
+	}
