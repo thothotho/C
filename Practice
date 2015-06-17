@@ -1,0 +1,39 @@
+//
+//  main.cpp
+//
+//  Created by M.T on 2013/01/17.
+//  Copyright (c) 2013年 M.T. All rights reserved.
+//
+
+#include <iostream>
+
+int main(int argc, const char * argv[])
+{
+
+    // insert code here...
+    
+    char name [20];
+    float temp;
+    int vol1,vol2,vol3;
+    int vol4,vol5,vol6;
+    
+    printf("Name : ");
+    scanf("%s", name);
+    printf("Temperature ('C): ");
+    scanf("%f", &temp);
+    printf("Volume of Whisky: ");
+    scanf("%d-%d-%d", &vol1, &vol2, &vol3);
+    printf("Volume of Wine  : ");
+    scanf("%d-%d-%d", &vol4, &vol5, &vol6);
+    
+    printf("######################################################");
+    printf("\n%s%10s%3s%3.0f\'C (%3.1f\'F)%25s","##","Temp.","=",temp,(9*temp/5)+32,"##");
+    printf("\n%s%11s%2s%2d%8s%3d%8s%4d%7s%7s","##","Whisky","=",vol1+(vol2/36),"Barrels",vol2%36+(vol3)/160,"Gallons",vol3%160,"Ounces","##");
+    printf("\n%s%9s%4s%2d%8s%3d%8s%4d%7s%7s","##","Wine","=",vol4+(vol5/36),"Barrels",vol5%36+(vol6)/160,"Gallons",vol6%160,"Ounces","##");
+    printf("\n%s%10s%3s%2d%8s%3d%8s%4d%7s%7s","##","Total","=", ((vol1+(vol2/36))+(vol4+(vol5/36)))+(((vol2%36+(vol3)/160)+(vol5%36+(vol6)/160))/36),"Barrels", ((vol2%36+(vol3)/160)+(vol5%36+(vol6)/160))%36+((vol3%160)+(vol6%160))/160,"Gallons",((vol3%160)+(vol6%160))%160,"Ounces","##");
+    printf("\n%s%42s%3s%5s%s","##","Compute","by","Rino","##");
+    printf("\n######################################################");
+    
+    return 0;
+}
+
