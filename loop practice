@@ -1,0 +1,63 @@
+//
+//  main.cpp
+//  home
+//
+//  Created by M.T on 2013/03/01.
+//  Copyright (c) 2013年 M.T All rights reserved.
+//
+#include <stdafx.h>
+#include <iostream>
+int star(int);
+int star2(int);
+int main(int argc, const char * argv[])
+{
+
+
+    int n1,n2;
+    char q;
+    printf("Input: ");
+    scanf("%d",&n1);
+    star(n1);
+    printf("\nDo you want to re-input?(Y/N): ");
+    scanf("%s",&q);
+    if (q!='Y') printf("Press any key to continue...");
+    else {printf("\nInput: ");
+        scanf("%d",&n2);}
+    star2(n2);
+    printf("\nDo you want to re-input?(Y/N): ");
+    scanf("%s",&q);
+    if (q!='Y') printf("Press any key to continue...");
+    else {printf("\nInput: ");
+        scanf("%d",&n2);}
+}
+
+int star(int r)
+{
+    int i,j;
+  
+    
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<r;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+	return r;
+ }
+
+int star2(int l)
+{
+    int i,j;
+    
+    for(i=0;i<l;i++)
+    {
+        for(j=i;j<l;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+	return l;
+}
